@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Complaint</title>
+    <link rel="stylesheet" href="complaint.css">
+</head>
+<body>
+
+<header>
+    <h2>Electricity Portal</h2>
+
+    <div>
+        Welcome User
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="payment.html">Pay Bill</a>
+    <a href="complaint.html">Register Complaint</a>
+    <a href="status.html">Complaint Status</a>
+</nav>
+
+<div class="container">
+
+    <h2>Register Complaint</h2>
+
+    <form id="complaintForm">
+
+        <label>Complaint Type</label>
+
+        <select id="complaintType"
+                onchange="loadCategory()">
+
+            <option value="">Select</option>
+
+            <option>Billing Related</option>
+
+            <option>Voltage Related</option>
+
+            <option>Frequent Disruption</option>
+
+            <option>Street Light Related</option>
+
+            <option>Pole Related</option>
+
+        </select>
+
+        <label>Category</label>
+
+        <select id="category">
+            <option>Select Category</option>
+        </select>
+
+        <label>Contact Person</label>
+        <input type="text" id="contactPerson">
+
+        <label>Landmark</label>
+        <input type="text" id="landmark">
+
+        <label>Consumer Number</label>
+        <input type="text"
+               id="consumerNo"
+               maxlength="13">
+
+        <label>Problem Description</label>
+        <textarea id="description"></textarea>
+
+        <label>Mobile Number</label>
+        <input type="text"
+               id="mobile"
+               maxlength="10">
+
+        <label>Address</label>
+        <textarea id="address"></textarea>
+
+        <div class="btn-group">
+
+            <button type="submit">
+                Submit Complaint
+            </button>
+
+            <button type="reset">
+                Cancel
+            </button>
+
+        </div>
+
+    </form>
+
+    <div id="successBox" class="hidden">
+
+        <h2 class="success">
+            Complaint Registered Successfully
+        </h2>
+
+        <p>
+            Complaint ID :
+            <span id="complaintId"></span>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="complaint.js"></script>
+
+</body>
+</html>
