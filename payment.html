@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Bill</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<header>
+    <h2>Electricity Bill Payment</h2>
+
+    <div>
+        Welcome Uday
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="payment.html">Pay Bill</a>
+    <a href="complaint.html">Register Complaint</a>
+    <a href="status.html">Complaint Status</a>
+</nav>
+
+<div class="container">
+
+    <h3>Bill Details</h3>
+
+    <div class="bill-box">
+
+        <p>Bill Amount :
+            ₹<span id="billAmount">3500</span>
+        </p>
+
+        <p>PG Charge :
+            ₹<span id="pgCharge">35</span>
+        </p>
+
+        <p>
+            Total Payable :
+            ₹<span id="totalPayable">3535</span>
+        </p>
+
+        <label>Mode of Payment</label>
+
+        <select id="paymentMode">
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+        </select>
+
+        <div class="buttons">
+            <button onclick="showCardForm()">
+                Pay Now
+            </button>
+
+            <button onclick="goHome()">
+                Back To Home
+            </button>
+        </div>
+
+    </div>
+
+    <div id="cardSection" class="hidden">
+
+        <h3>Card Details</h3>
+
+        <input
+            type="text"
+            id="cardNo"
+            placeholder="Card Number">
+
+        <input
+            type="text"
+            id="holder"
+            placeholder="Card Holder Name">
+
+        <input
+            type="month"
+            id="expiry">
+
+        <input
+            type="password"
+            id="cvv"
+            maxlength="3"
+            placeholder="CVV">
+
+        <button onclick="makePayment()">
+            Make Payment
+        </button>
+
+    </div>
+
+    <div id="successSection" class="hidden">
+
+        <h2 class="success">
+            Payment Successful
+        </h2>
+
+        <p>
+            Transaction ID :
+            <span id="txnId"></span>
+        </p>
+
+        <p>
+            Amount Paid :
+            ₹<span id="paidAmount"></span>
+        </p>
+
+        <p>
+            Date :
+            <span id="txnDate"></span>
+        </p>
+
+        <button onclick="downloadReceipt()">
+            Download Receipt
+        </button>
+
+    </div>
+
+</div>
+
+<script src="payment.js"></script>
+
+</body>
+</html>
