@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>Electricity Bill Portal</h2>
+
+    <div class="user-section">
+        Welcome, Uday
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Pay Bill</a>
+    <a href="#">Register Complaint</a>
+    <a href="#">Complaint Status</a>
+</nav>
+
+<div class="container">
+
+    <h2>Pending Bills</h2>
+
+    <table>
+        <tr>
+            <th>Select</th>
+            <th>Bill No</th>
+            <th>Month</th>
+            <th>Amount</th>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox"
+                       class="bill"
+                       value="1250"
+                       onchange="calculateTotal()">
+            </td>
+            <td>1001</td>
+            <td>January</td>
+            <td>₹1250</td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox"
+                       class="bill"
+                       value="980"
+                       onchange="calculateTotal()">
+            </td>
+            <td>1002</td>
+            <td>February</td>
+            <td>₹980</td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox"
+                       class="bill"
+                       value="1450"
+                       onchange="calculateTotal()">
+            </td>
+            <td>1003</td>
+            <td>March</td>
+            <td>₹1450</td>
+        </tr>
+
+    </table>
+
+    <div class="total-section">
+        Total Amount: ₹<span id="total">0</span>
+    </div>
+
+    <button class="pay-btn"
+            onclick="proceedToPay()">
+        Proceed To Pay
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
